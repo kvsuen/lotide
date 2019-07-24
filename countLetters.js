@@ -9,11 +9,10 @@ const assertEqual = function(actual, expected) {
 
 const removeSpaces = stringToRemoveSpaces => {
   const noSpaces = stringToRemoveSpaces.split(' ');
-  const spacesRemoved = noSpaces.join('')
+  const spacesRemoved = noSpaces.join('');
 
   return spacesRemoved;
 };
-
 
 const countLetters = stringToCount => {
   const noSpaces = removeSpaces(stringToCount);
