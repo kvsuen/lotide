@@ -40,8 +40,8 @@ const eqObjects = function(object1, object2) {
           return false;
         }
         //else if object, go into the nested array and repeat function (recursion)
-      } else {
-        return eqObjects(object1[key], object2[key]);
+      } else if (!eqObjects(object1[key], object2[key])) {
+        return false;
       }
     }
   }
@@ -69,3 +69,4 @@ assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
 
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { y: 0, z: 1 }, b: 4 }), false);
