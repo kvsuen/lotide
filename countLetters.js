@@ -1,11 +1,4 @@
-const assertEqual = function(actual, expected) {
-  let message = "";
-  //template literals (aka template strings)
-  actual === expected ? message = `✔✔✔ Assertion Passed: "${actual}" === "${expected}"` :
-    message = `✖✖✖ Assertion Failed: "${actual}" !== "${expected}"`;
-
-  return console.log(message);
-};
+const assertEqual = require('./assertEqual');
 
 const removeSpaces = stringToRemoveSpaces => {
   const noSpaces = stringToRemoveSpaces.split(' ');
