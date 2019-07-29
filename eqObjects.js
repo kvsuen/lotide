@@ -49,6 +49,8 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+module.exports = eqObjects;
+
 
 // TEST CODE
 const ab = { a: "1", b: "2" };

@@ -46,6 +46,8 @@ const assertObjectsEqual = function(actual, expected) {
   return console.log(message);
 };
 
+module.exports = assertObjectsEqual;
+
 // TEST CODE
 
 const ab = { a: "1", b: "2" };

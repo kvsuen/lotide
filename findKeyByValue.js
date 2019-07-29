@@ -21,6 +21,8 @@ const findKeyByValue = (objectData, valueOfKeyToFind) => {
   return result;
 };
 
+module.exports = findKeyByValue;
+
 
 // TEST CODE
 const bestTVShowsByGenre = {

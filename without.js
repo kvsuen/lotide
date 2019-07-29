@@ -29,6 +29,8 @@ const without = function(source, itemsToRemove) {
   return filteredArray;
 };
 
+module.exports = without;
+
 // TEST CODE
 assertArraysEqual(without([1,2,3], [1]), [2,3]);
 assertArraysEqual(without([1,2,3], [1,2]), [3]);

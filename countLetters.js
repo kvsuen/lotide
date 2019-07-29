@@ -30,6 +30,8 @@ const countLetters = stringToCount => {
   return results;
 };
 
+module.exports = countLetters;
+
 // TEST CODE
 const result1 = countLetters('lighthouse in the house');
 

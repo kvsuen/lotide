@@ -1,24 +1,22 @@
-const assertEqual = require('../assertEqual');
 const tail = require('../tail');
+const chai = require('chai');
 
-// TEST CODE
-assertEqual(tail([5,6,7]).length, 2);
-assertEqual(tail([5,6,7])[0], 6);
-assertEqual(tail([5,6,7])[1], 7);
+describe("#tail", () => {
+  it("returns an empty array [] if the input is empty", () => {
+    chai.expect(tail([])).to.eql([]);
+  });
 
-assertEqual(tail(["Hello", "Lighthouse", "Labs"]).length, 2);
-assertEqual(tail(["Hello", "Lighthouse", "Labs"])[0], "Lighthouse");
-assertEqual(tail(["Hello", "Lighthouse", "Labs"])[1], "Labs");
+  it("returns [] if the input is [1]", () => {
+    chai.expect(tail([1])).to.eql([]);
+  });
 
-assertEqual(tail("Hi").length, 1);
-assertEqual(tail("Hi")[0], "i");
-
-assertEqual(tail([5]).length, 0);
-assertEqual(tail([5])[0], undefined);
-
-assertEqual(tail([]).length, 0);
-assertEqual(tail([])[0], undefined);
-
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+  it("returns [2] if the input is [1, 2]", () => {
+    chai.expect(tail([1, 2])).to.eql([2]);
+  });
+  it("returns [2, 3, 4] if the input is [1, 2, 3, 4]", () => {
+    chai.expect(tail([1, 2, 3, 4])).to.eql([2, 3, 4]);
+  });
+  it("returns ['e','y'] if the input is 'Hey'", () => {
+    chai.expect(tail('Hey')).to.eql(['e','y']);
+  });
+});
